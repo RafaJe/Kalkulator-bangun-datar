@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="ADVAN"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-08-19 11:15:04 AM"/>
+        <attribute name="created" value="QURWQU47V09SS1BMVVMtUjsyMDI1LTA4LTE2OzA3OjIwOjM4IEFNOzI0MDk="/>
+        <attribute name="edited" value="QURWQU47V09SS1BMVVMtUjsyMDI1LTA4LTE5OzExOjE1OjA0IEFNOzY7MjUxNw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="b, h" type="Integer" array="False" size=""/>
+            <output expression="&quot;Haloww, selamat datang&quot;" newline="True"/>
+            <output expression="&quot;Apa yang kamu ingin hitung?&quot;" newline="True"/>
+            <output expression="&quot;1. Kubus&quot;" newline="True"/>
+            <output expression="&quot;2. Bola&quot;" newline="True"/>
+            <output expression="&quot;3. Tabung&quot;" newline="True"/>
+            <output expression="&quot;4. Limas&quot;" newline="True"/>
+            <input variable="b"/>
+            <if expression="b == 1">
+                <then>
+                    <declare name="s, v, k, la" type="Integer" array="False" size=""/>
+                    <output expression="&quot;Kubus&quot;" newline="True"/>
+                    <output expression="&quot;1. Volume&quot;" newline="True"/>
+                    <output expression="&quot;2. Keliling&quot;" newline="True"/>
+                    <output expression="&quot;3. Luas Permukaan&quot;" newline="True"/>
+                    <output expression="&quot;Masukkan nilai sisi&quot;" newline="True"/>
+                    <input variable="s"/>
+                    <assign variable="v" expression="s * s * s"/>
+                    <assign variable="k" expression="12 * s"/>
+                    <assign variable="la" expression="(s * s) * 6"/>
+                    <output expression="&quot;1. &quot; &amp;v" newline="True"/>
+                    <output expression="&quot;2. &quot; &amp;k" newline="True"/>
+                    <output expression="&quot;3. &quot; &amp;la" newline="True"/>
+                </then>
+                <else>
+                    <if expression="b == 2">
+                        <then>
+                            <output expression="&quot;Bola&quot;" newline="True"/>
+                            <declare name="r" type="Integer" array="False" size=""/>
+                            <declare name="v, k, la, phi" type="Real" array="False" size=""/>
+                            <assign variable="phi" expression="3.14"/>
+                            <output expression="&quot;1. Volume&quot;" newline="True"/>
+                            <output expression="&quot;2. Keliling&quot;" newline="True"/>
+                            <output expression="&quot;3. Luas Permukaan&quot;" newline="True"/>
+                            <output expression="&quot;Masukkan nilai sisi&quot;" newline="True"/>
+                            <input variable="r"/>
+                            <assign variable="v" expression="4/3 * phi * r^3"/>
+                            <assign variable="k" expression="phi * r^2"/>
+                            <assign variable="la" expression="4 * phi * r^2"/>
+                            <output expression="&quot;1. &quot; &amp;v" newline="True"/>
+                            <output expression="&quot;2. &quot; &amp;k" newline="True"/>
+                            <output expression="&quot;3. &quot; &amp;la" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="b == 3">
+                                <then>
+                                    <output expression="&quot;Tabung&quot;" newline="True"/>
+                                    <declare name="r, t" type="Integer" array="False" size=""/>
+                                    <declare name="v, k, la, phi" type="Real" array="False" size=""/>
+                                    <assign variable="phi" expression="3.14"/>
+                                    <output expression="&quot;1. Volume&quot;" newline="True"/>
+                                    <output expression="&quot;2. Keliling&quot;" newline="True"/>
+                                    <output expression="&quot;3. Luas Permukaan&quot;" newline="True"/>
+                                    <output expression="&quot;Masukkan nilai jari-jari dan tinggi&quot;" newline="True"/>
+                                    <input variable="r"/>
+                                    <input variable="t"/>
+                                    <assign variable="v" expression="phi * r^2 *t"/>
+                                    <assign variable="k" expression="2 * r * phi"/>
+                                    <assign variable="la" expression="(phi * r^2 *2) + (k * t)"/>
+                                    <output expression="&quot;1. &quot; &amp;v" newline="True"/>
+                                    <output expression="&quot;2. &quot; &amp;k" newline="True"/>
+                                    <output expression="&quot;3. &quot; &amp;la" newline="True"/>
+                                </then>
+                                <else>
+                                    <if expression="b &gt; 4">
+                                        <then>
+                                            <output expression="&quot;Nu uh&quot;" newline="True"/>
+                                            <call expression="main&#13;&#10;"/>
+                                        </then>
+                                        <else>
+                                            <output expression="&quot;Limas&quot;" newline="True"/>
+                                            <declare name="s, t" type="Integer" array="False" size=""/>
+                                            <declare name="v, k, la, lm" type="Real" array="False" size=""/>
+                                            <output expression="&quot;1. Volume&quot;" newline="True"/>
+                                            <output expression="&quot;2. Keliling&quot;" newline="True"/>
+                                            <output expression="&quot;3. Luas Permukaan&quot;" newline="True"/>
+                                            <output expression="&quot;Masukkan nilai sisi dan tinggi&quot;" newline="True"/>
+                                            <input variable="s"/>
+                                            <input variable="t"/>
+                                            <assign variable="lm" expression="sqrt(((1/2 * s)^2) + (t^2)) * s * 1/2"/>
+                                            <assign variable="v" expression="(1/3) * s * s * t"/>
+                                            <assign variable="k" expression="((sqrt((sqrt(s^2 + s^2) / 2)^2) + t^2) * 4) + (4 * s)"/>
+                                            <assign variable="la" expression="(s * s) + (4 * lm)"/>
+                                            <output expression="&quot;1. VOLUME =&quot; &amp;v" newline="True"/>
+                                            <output expression="&quot;2. KELLILING =&quot; &amp;k" newline="True"/>
+                                            <output expression="&quot;3. &quot; &amp;la" newline="True"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="f" type="Integer" variable="">
+        <parameters/>
+        <body/>
+    </function>
+</flowgorithm>
