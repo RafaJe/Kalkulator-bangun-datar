@@ -1,4 +1,4 @@
-[<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,7 +8,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js" integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK" crossorigin="anonymous"></script>
     <title>Calculator</title>
     <style>
-        /* Tambahkan style untuk animasi hover */
         .shape-card {
             transition: transform 0.8s ease, box-shadow 0.8s ease;
             cursor: pointer;
@@ -53,10 +52,8 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function() {
-            // Efek hover scale 1.5 dengan animasi
             $('.shape-card').hover(
                 function() {
-                    // Saat mouse masuk (hover in)
                     $(this).css({
                         'transform': 'scale(1.2)',
                         'z-index': '1000',
@@ -64,7 +61,6 @@
                     });
                 },
                 function() {
-                    // Saat mouse keluar (hover out)
                     $(this).css({
                         'transform': 'scale(1)',
                         'z-index': 'auto',
@@ -112,99 +108,4 @@
         }
     </script>
 </body>
-</html>]
-
-function main() {
-    var b, h;
-
-    window.alert("Haloww, selamat datang");
-    window.alert("Apa yang kamu ingin hitung?");
-    window.alert("1. Kubus");
-    window.alert("2. Bola");
-    window.alert("3. Tabung");
-    window.alert("4. Limas");
-    b = Number(window.prompt('Enter a value for b'));
-    if (b == 1) {
-        var s, v, k, la;
-
-        window.alert("Kubus");
-        window.alert("1. Volume");
-        window.alert("2. Keliling");
-        window.alert("3. Luas Permukaan");
-        window.alert("Masukkan nilai sisi");
-        s = Number(window.prompt('Enter a value for s'));
-        v = s * s * s;
-        k = 12 * s;
-        la = s * s * 6;
-        window.alert("1. " + v);
-        window.alert("2. " + k);
-        window.alert("3. " + la);
-    } else {
-        if (b == 2) {
-            window.alert("Bola");
-            var r;
-            var v, k, la, phi;
-
-            phi = 3.14;
-            window.alert("1. Volume");
-            window.alert("2. Keliling");
-            window.alert("3. Luas Permukaan");
-            window.alert("Masukkan nilai sisi");
-            r = Number(window.prompt('Enter a value for r'));
-            v = 4 / 3 * phi * Math.pow(r, 3);
-            k = 2 * phi * r;
-            la = 4 * phi * Math.pow(r, 2);
-            window.alert("1. " + v);
-            window.alert("2. " + k);
-            window.alert("3. " + la);
-        } else {
-            if (b == 3) {
-                window.alert("Tabung");
-                var r, t;
-                var v, k, la, phi;
-
-                phi = 3.14;
-                window.alert("1. Volume");
-                window.alert("2. Keliling");
-                window.alert("3. Luas Permukaan");
-                window.alert("Masukkan nilai jari-jari dan tinggi");
-                r = Number(window.prompt('Enter a value for r'));
-                t = Number(window.prompt('Enter a value for t'));
-                v = phi * Math.pow(r, 2) * t;
-                k = 4 * r * phi;
-                la = phi * r * 4 + k / 2 * t;
-                window.alert("1. " + v);
-                window.alert("2. " + k);
-                window.alert("3. " + la);
-            } else {
-                if (b > 4) {
-                    window.alert("Nu uh");
-                    main();
-                } else {
-                    window.alert("Limas");
-                    var s, t;
-                    var v, k, la, lm;
-
-                    window.alert("1. Volume");
-                    window.alert("2. Keliling");
-                    window.alert("3. Luas Permukaan");
-                    window.alert("Masukkan nilai sisi dan tinggi");
-                    s = Number(window.prompt('Enter a value for s'));
-                    t = Number(window.prompt('Enter a value for t'));
-                    lm = Math.sqrt(Math.pow(1 / 2 * s, 2) + Math.pow(t, 2)) * s * 1 / 2;
-                    v = 1 / 3 * s * s * t;
-                    k = (Math.sqrt(Math.pow(Math.sqrt(Math.pow(s, 2) + Math.pow(s, 2)) / 2, 2)) + Math.pow(t, 2)) * 4 + 4 * s;
-                    la = s * s + 4 * lm;
-                    window.alert("1. VOLUME =" + v);
-                    window.alert("2. KELLILING =" + k);
-                    window.alert("3. " + la);
-                }
-            }
-        }
-    }
-}
-
-function f() {
-    
-    return ;
-}
+</html>
