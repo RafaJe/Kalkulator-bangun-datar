@@ -63,23 +63,26 @@
                 </div>
                 <div class="col-9">
                     <div class="row">
-                        <div class="col-3 mx-3">
+                        <div class="col mx-3">
                             <h2 class="text-center">Volume</h2>
-                            <h4><span id="vo"></span></h4>
+                            <h4>V = s x s x s</h4>
+                            <h4>V = <span id="vo"></span></h4>
                         </div>
-                        <div class="col-3 mx-3">
+                        <div class="col mx-3">
                             <h2 class="text-center">Keliing</h2>
+                            <h4>K = 12 x s</h4>
+                            <h4>K = <span id="ke"></span></h4>
                         </div>
-                        <div class="col-3 mx-3">
+                        <div class="col mx-3">
                             <h2 class="text-center">Luas Permukaan</h2>
-                        </div>
-                        <div class="col-1 ">
-                            <button type="button" class="btn-close" aria-label="Close" id="cl"></button>
+                            <h4>LP = 6 x s x s</h4> 
+                            <h4>LP = <span id="lupe"></span></h4>
                         </div>
                     </div>
+                    <button type="button" class="btn-close position-absolute top-0 end-0 m-2" aria-label="Close" id="cl"></button>
                 </div>
+                
             </div>
-            
         </div>
     </div>
     <div class="card container my-5" id="sbo" style="display: none;">
@@ -94,7 +97,7 @@
                         <h4>LP = 4 x &pi; x r^2</h4>
                         <p>Kubus merupakan sebuah bangun ruang yang memiliki 6 sisi.</p>
                         <div class="input-grup my-2">
-                            <input class="form-control text-center" type="number" placeholder="Masukkan nilai sisi" id="IK">
+                            <input class="form-control text-center" type="number" placeholder="Masukkan nilai sisi" id="IB">
                             <button class="btn btn-danger mt-3 form-control" id="SK" onclick="math()">Submit</button>
                         </div>
                     </div>
@@ -103,18 +106,23 @@
                     <div class="row">
                         <div class="col mx-3">
                             <h2 class="text-center">Volume</h2>
-                            <h4><span id="vo"></span></h4>
+                            <h4>V = 4/3 x &pi; x r<sup>3</sup></h4>
+                            <h4>V = <span id="voB"></span></h4>
                         </div>
                         <div class="col mx-3">
                             <h2 class="text-center">Keliing</h2>
+                            <h4>K = 2 x &pi; x r</h4>
+                            <h4>K = <span id="keB"></span></h4>
                         </div>
                         <div class="col mx-3">
                             <h2 class="text-center">Luas Permukaan</h2>
+                            <h4>LP = 4 x &pi; x r<sup>2</sup></h4>
+                            <h4>LP = <span id="lupeB"></span></h4>
                         </div>
                     </div>
                 </div>
             </div>
-            <button type="button" class="btn-close" aria-label="Close" id="lc"></button>
+            <button type="button" class="btn-close position-absolute top-0 end-0 m-2" aria-label="Close" id="lc"></button>
         </div>
     </div>
     <div class="card container my-5" id="sta" style="display: none;">
@@ -129,7 +137,8 @@
                         <h4>LP = 2 x &pi; x r + (K x T)</h4>
                         <p>Kubus merupakan sebuah bangun ruang yang memiliki 6 sisi.</p>
                         <div class="input-grup my-2">
-                            <input class="form-control text-center" type="number" placeholder="Masukkan nilai sisi" id="IK">
+                            <input class="form-control text-center" type="number" placeholder="Masukkan nilai sisi" id="IT">
+                            <input class="form-control text-center my-2" type="number" placeholder="Masukkan nilai tinggi" id="TT">
                             <button class="btn btn-success mt-3 form-control" id="SK" onclick="math()">Submit</button>
                         </div>
                     </div>
@@ -138,18 +147,23 @@
                     <div class="row">
                         <div class="col mx-3">
                             <h2 class="text-center">Volume</h2>
-                            <h4><span id="vo"></span></h4>
+                            <h4>V = &pi; x r<sup>2</sup> x T</h4>
+                            <h4>V = <span id="voT"></span></h4>
                         </div>
                         <div class="col mx-3">
                             <h2 class="text-center">Keliing</h2>
+                            <h4>K = 4 x &pi; x r</h4>
+                            <h4>K = <span id="keT"></span></h4>
                         </div>
                         <div class="col mx-3">
                             <h2 class="text-center">Luas Permukaan</h2>
+                            <h4>LP = 4 x &pi; x r + (K x T)</h4>
+                            <h4>LP = <span id="lupeT"></span></h4>
                         </div>
                     </div>
                 </div>
             </div>
-            <button type="button" class="btn-close" aria-label="Close" id="cc"></button>
+            <button type="button" class="btn-close position-absolute top-0 end-0 m-2" aria-label="Close" id="cc"></button>
         </div>
     </div>
     <div class="card container my-5" id="sli" style="display: none;">
@@ -164,8 +178,9 @@
                         <h4>LP = (s x s) + (4 x LP miring)</h4>
                         <p>Kubus merupakan sebuah bangun ruang yang memiliki 6 sisi.</p>
                         <div class="input-grup my-2">
-                            <input class="form-control text-center" type="number" placeholder="Masukkan nilai sisi" id="IK">
-                            <button class="btn btn-warning mt-3 form-control" id="SK" onclick="math()">Submit</button>
+                            <input class="form-control text-center" type="number" placeholder="Masukkan nilai sisi" id="IL">
+                            <input class="form-control text-center my-2" type="number" placeholder="Masukkan nilai tinggi" id="TL">
+                            <button class="btn btn-warning mt-3 form-control" id="SK" onclick="math()">submit</button>
                         </div>
                     </div>
                 </div>
@@ -173,18 +188,23 @@
                     <div class="row">
                         <div class="col mx-3">
                             <h2 class="text-center">Volume</h2>
-                            <h4><span id="vo"></span></h4>
+                            <h5>V = 1/3 x s x s x T</h5>
+                            <h5>V = <span id="voL"></span></h5>
                         </div>
                         <div class="col mx-3">
                             <h2 class="text-center">Keliing</h2>
+                            <h5>K = (4 x s) + (s miring x 4)</h5>
+                            <h5>K = <span id="keL"></span></h5>
                         </div>
                         <div class="col mx-3">
                             <h2 class="text-center">Luas Permukaan</h2>
+                            <h5>LP = (s x s) + (4 x LP miring)</h5>
+                            <h5>LP = <span id="lupeL"></span></h5>
                         </div>
                     </div>
                 </div>
             </div>
-            <button type="button" class="btn-close" aria-label="Close" id="ll"></button>
+            <button type="button" class="btn-close position-absolute top-0 end-0 m-2" aria-label="Close" id="ll"></button>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
@@ -213,10 +233,9 @@
             $( "#sba" ).show( "slow",
             function() {
                 $( "#main").hide("slow");
-            }
-            
-            );
+            });
         });
+
         $( "#cl" ).on( "click", function() {
         $( "#sba" ).hide( 1000,
             function() {
@@ -281,36 +300,37 @@
             var V = sisiK * sisiK * sisiK;
             var K = 12 * sisiK;
             var LP = sisiK * sisiK * 6;
-            document.getElementById("vo").innerHTML = V;
-            document.getElementById("ke").innerHTML = K;
-            document.getElementById("lupe").innerHTML = LP;
+            document.getElementById("vo").innerHTML = V + " cm<sup>3</sup>";
+            document.getElementById("ke").innerHTML = K + " cm";
+            document.getElementById("lupe").innerHTML = LP + " cm<sup>2</sup>";
 
             var jariB = document.getElementById('IB').value
             var pi = 3.14;
             var VB = (4 / 3) * pi * Math.pow(jariB, 3);
             var KB = 2 * pi * jariB;
             var LPB = 4 * pi * Math.pow(jariB, 2);
-            document.getElementById("voB").innerHTML = VB;
-            document.getElementById("keB").innerHTML = KB;
-            document.getElementById("lupeB").innerHTML = LPB;
+            document.getElementById("voB").innerHTML = VB + " cm<sup>3</sup>";
+            document.getElementById("keB").innerHTML = KB + " cm";
+            document.getElementById("lupeB").innerHTML = LPB + " cm<sup>2</sup>";
 
             var jariT = document.getElementById('IT').value
             var tinggiT = document.getElementById('TT').value
             var VT = pi * Math.pow(jariT, 2) * tinggiT;
             var KT = 4 * pi * jariT;
             var LPT = 4 * pi * jariT + ((KT/2) * tinggiT);
-            document.getElementById("voT").innerHTML = VT;
-            document.getElementById("keT").innerHTML = KT;
-            document.getElementById("lupeT").innerHTML = LPT;
+            document.getElementById("voT").innerHTML = VT + " cm<sup>3</sup>";
+            document.getElementById("keT").innerHTML = KT + " cm";
+            document.getElementById("lupeT").innerHTML = LPT + " cm<sup>2</sup>";
 
             var sisiL = document.getElementById('IL').value
             var tinggiL = document.getElementById('TL').value
-            var lm = Math.sqrt(Math.pow(1 / 2 * sisiL, 2) + Math.pow(tinggiL, 2)) * sisiL * 1 / 2;
+            var lm = (Math.sqrt(Math.pow((1 / 2 * sisiL), 2))) + (Math.pow(tinggiL, 2) * sisiL * 1 / 2);
             var VL = (1 / 3) * sisiL * sisiL * tinggiL;
-            var KL = (Math.sqrt(Math.pow(Math.sqrt(Math.pow(sisiL, 2) + Math.pow(sisiL, 2)) / 2, 2)) + Math.pow(tinggiL, 2)) * 4 + 4 * s;
-            document.getElementById("voL").innerHTML = VL;
-            document.getElementById("keL").innerHTML = KL;
-            document.getElementById("lupeL").innerHTML = LPL;
+            var KL = ((Math.sqrt(Math.pow(Math.sqrt(Math.pow(sisiL, 2) + Math.pow(sisiL, 2)) / 2, 2))) + (Math.pow(tinggiL, 2)) * 4 + 4 * s);
+            var LPL = (sisiL * sisiL) + (4 * lm);
+            document.getElementById("voL").innerHTML = VL + " cm<sup>3</sup>";
+            document.getElementById("keL").innerHTML = KL + " cm";
+            document.getElementById("lupeL").innerHTML = LPL + " cm<sup>2</sup>";
         }
     </script>
 </body>
