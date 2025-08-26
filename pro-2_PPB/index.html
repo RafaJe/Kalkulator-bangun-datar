@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <link rel="stylesheet" href="js.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js" integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <title>Calculator</title>
     <style>
         .shape-card {
@@ -15,196 +15,241 @@
     </style>
 </head>
 <body>
-    <div class="container text-center mb-5">
-        <h2>Welcome to this page</h2>
-        <h1>Calculator Bangun Ruang</h1>
+    <div id="hd">
+        <div class="container text-center my-5">
+            <h2>Welcome to this page</h2>
+            <h2>Calculator Bangun Ruang</h2>
+        </div>
+        <div class="text-center my-5">
+            <p class="fs-5 text-muted" id="ch">Choose The Shape</p>
+        </div>
     </div>
-    <div class="text-center my-5">
-        <h1 id="ch">Choose The Shape</h1>
-    </div>
-    <div class="card container my-5" id="main">
-        <div class="card-body">
-            <div class="row d-flex justify-content-center">
-                <div class="card col mx-3 d-flex justify-content-center text-center shape-card" id="sho">
-                    <img src="kb.png">
-                    <h1>Kubus</h1>
-                </div>
-                <div class="card col mx-3 d-flex justify-content-center text-center shape-card" id="sha">
-                    <img src="bol.png">
-                    <h1>Bola</h1>
-                </div>
-                <div class="card col mx-3 d-flex justify-content-center text-center shape-card" id="shi">
-                    <img src="tb.png">
-                    <h1>Tabung</h1>
-                </div>
-                <div class="card col mx-3 d-flex justify-content-center text-center shape-card" id="shu">
-                    <img src="lm.png">
-                    <h1>Limas</h1>
-                </div>
+    <div class="container my-5" id="main">
+        <div class="row d-flex justify-content-center">
+            <div class="card col mx-3 d-flex justify-content-center text-center shape-card" id="sho">
+                <img src="kb.png">
+                <h1>Kubus</h1>
+            </div>
+            <div class="card col mx-3 d-flex justify-content-center text-center shape-card" id="sha">
+                <img src="bol.png">
+                <h1>Bola</h1>
+            </div>
+            <div class="card col mx-3 d-flex justify-content-center text-center shape-card" id="shi">
+                <img src="tb.png">
+                <h1>Tabung</h1>
+            </div>
+            <div class="card col mx-3 d-flex justify-content-center text-center shape-card" id="shu">
+                <img src="lm.png">
+                <h1>Limas</h1>
             </div>
         </div>
     </div>
-    <div class="card container my-5" id="sba" style="display: none;">
-        <div class="card-body col-12">
-            <div class="row">
-                <div class="col-3">
+    <div class="container my-5" id="sba" style="display: none;">
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            <div class="card col border-primary">
+                <div class="card-body">
                     <img src="kb.png" class="img-fluid">
                     <div class="text-center">
                         <h1>Kubus</h1>
-                        <h4>V = s x s x s</h4>
-                        <h4>K = 12 x s</h4>
-                        <h4>LP = 6 x s x s</h4>
                         <p>Kubus merupakan sebuah bangun ruang yang memiliki 6 sisi.</p>
                         <div class="input-grup my-2">
                             <input class="form-control text-center" type="number" placeholder="Masukkan nilai sisi" id="IK">
-                            <button class="btn btn-primary mt-3 form-control" id="SK" onclick="math()">Submit</button>
+                            <button class="btn btn-primary mt-3 form-control" id="SBK" onclick="math()">Submit</button>
                         </div>
                     </div>
+                    <button type="button" class="btn-close position-absolute top-0 start-0 m-2" aria-label="Close" id="cl"></button>
                 </div>
-                <div class="col-9">
-                    <div class="row">
-                        <div class="col mx-3">
-                            <h2 class="text-center">Volume</h2>
-                            <h4>V = s x s x s</h4>
-                            <h4>V = <span id="vo"></span></h4>
-                        </div>
-                        <div class="col mx-3">
-                            <h2 class="text-center">Keliing</h2>
-                            <h4>K = 12 x s</h4>
-                            <h4>K = <span id="ke"></span></h4>
-                        </div>
-                        <div class="col mx-3">
-                            <h2 class="text-center">Luas Permukaan</h2>
-                            <h4>LP = 6 x s x s</h4> 
-                            <h4>LP = <span id="lupe"></span></h4>
-                        </div>
+            </div>
+            <div class="col" id="rk" style="display: none;">
+                <div class="card h-100 d-flex flex-column shadow-sm bg-primary" data-bs-theme="dark">
+                    <div class="card-header">
+                        <h2 class="text-center">Volume</h2>
                     </div>
-                    <button type="button" class="btn-close position-absolute top-0 end-0 m-2" aria-label="Close" id="cl"></button>
+                    <div class="container card-body ">
+                        <h4>V = s x s x s</h4>
+                        <h4>V = <span id="vo"></span></h4>
+                    </div>
                 </div>
-                
+            </div>
+            <div class="col" id="rk1" style="display: none;">
+                <div class="card h-100 d-flex flex-column shadow-sm bg-primary" data-bs-theme="dark">
+                    <div class="card-header">
+                        <h2 class="text-center">Keliling</h2>
+                    </div>
+                    <div class="container card-body ">
+                        <h4>K = 12 x s</h4>
+                        <h4>K = <span id="ke"></span></h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col" id="rk2" style="display: none;">
+                <div class="card h-100 d-flex flex-column shadow-sm bg-primary" data-bs-theme="dark"    >
+                    <div class="card-header">
+                        <h2 class="text-center">Luas Permukaan</h2>
+                    </div>
+                    <div class="container card-body">
+                        <h4>LP = 6 x s x s</h4> 
+                        <h4>LP = <span id="lupe"></span></h4>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="card container my-5" id="sbo" style="display: none;">
-        <div class="card-body col-12">
-            <div class="row">
-                <div class="col-3">
+    <div class="container my-5" id="sbo" style="display: none;">
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            <div class="card col border-danger">
+                <div class="card-body">
                     <img src="bol.png" class="img-fluid">
                     <div class="text-center">
                         <h1>Bola</h1>
-                        <h4>V = 4/3 x &pi; x r^3</h4>
-                        <h4>K = 2 x &pi; x r</h4>
-                        <h4>LP = 4 x &pi; x r^2</h4>
-                        <p>Kubus merupakan sebuah bangun ruang yang memiliki 6 sisi.</p>
+                        <p>Bola adalah bentuk 3 dimensi dari lingkaran.</p> 
                         <div class="input-grup my-2">
                             <input class="form-control text-center" type="number" placeholder="Masukkan nilai sisi" id="IB">
-                            <button class="btn btn-danger mt-3 form-control" id="SK" onclick="math()">Submit</button>
+                            <button class="btn btn-danger mt-3 form-control" id="SBB" onclick="math()">Submit</button>
                         </div>
                     </div>
+                    <button type="button" class="btn-close position-absolute top-0 start-0 m-2" aria-label="Close" id="lc"></button>
                 </div>
-                <div class="col-9">
-                    <div class="row">
-                        <div class="col mx-3">
-                            <h2 class="text-center">Volume</h2>
-                            <h4>V = 4/3 x &pi; x r<sup>3</sup></h4>
-                            <h4>V = <span id="voB"></span></h4>
-                        </div>
-                        <div class="col mx-3">
-                            <h2 class="text-center">Keliing</h2>
-                            <h4>K = 2 x &pi; x r</h4>
-                            <h4>K = <span id="keB"></span></h4>
-                        </div>
-                        <div class="col mx-3">
-                            <h2 class="text-center">Luas Permukaan</h2>
-                            <h4>LP = 4 x &pi; x r<sup>2</sup></h4>
-                            <h4>LP = <span id="lupeB"></span></h4>
-                        </div>
+            </div>
+            <div class="col" id="rb" style="display: none;">
+                <div class="card h-100 d-flex flex-column shadow-sm bg-danger" data-bs-theme="dark">
+                    <div class="card-header">
+                        <h2 class="text-center">Volume</h2>
+                    </div>
+                    <div class="container card-body">
+                        <h4>V = 4/3 x &pi; x r<sup>3</sup></h4>
+                        <h4>V = <span id="voB"></span></h4>
                     </div>
                 </div>
             </div>
-            <button type="button" class="btn-close position-absolute top-0 end-0 m-2" aria-label="Close" id="lc"></button>
+            <div class="col" id="rb1" style="display: none;">
+                <div class="card h-100 d-flex flex-column shadow-sm bg-danger" data-bs-theme="dark">
+                    <div class="card-header">
+                        <h2 class="text-center">Keliling</h2>
+                    </div>
+                    <div class="container card-body">
+                        <h4>K = 2 x &pi; x r</h4>
+                        <h4>K = <span id="keB"></span></h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col" id="rb2" style="display: none;">
+                <div class="card h-100 d-flex flex-column shadow-sm bg-danger" data-bs-theme="dark">
+                    <div class="card-header">
+                        <h2 class="text-center">Luas Permukaan</h2>
+                    </div>
+                    <div class="container card-body">
+                        <h4>LP = 4 x &pi; x r<sup>2</sup></h4>
+                        <h4>LP = <span id="lupeB"></span></h4>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="card container my-5" id="sta" style="display: none;">
-        <div class="card-body col-12">
-            <div class="row">
-                <div class="col-3">
+
+    <div class="container my-5" id="sta" style="display: none;">
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            <div class="card col border-success">
+                <div class="card-body">
                     <img src="tb.png" class="img-fluid">
                     <div class="text-center">
                         <h1>Tabung</h1>
-                        <h4>V = &pi; x r^2 x T</h4>
-                        <h4>K = 4 x &pi; x r</h4>
-                        <h4>LP = 2 x &pi; x r + (K x T)</h4>
-                        <p>Kubus merupakan sebuah bangun ruang yang memiliki 6 sisi.</p>
+                        <p>Tabung, bangun datar yang biasanya digunakan untuk bentuk tempat penyimpanan cairan.</p>
                         <div class="input-grup my-2">
                             <input class="form-control text-center" type="number" placeholder="Masukkan nilai sisi" id="IT">
                             <input class="form-control text-center my-2" type="number" placeholder="Masukkan nilai tinggi" id="TT">
-                            <button class="btn btn-success mt-3 form-control" id="SK" onclick="math()">Submit</button>
+                            <button class="btn btn-success mt-3 form-control" id="SBT" onclick="math()">Submit</button>
                         </div>
                     </div>
+                    <button type="button" class="btn-close position-absolute top-0 start-0 m-2" aria-label="Close" id="cc"></button>
                 </div>
-                <div class="col-9">
-                    <div class="row">
-                        <div class="col mx-3">
-                            <h2 class="text-center">Volume</h2>
-                            <h4>V = &pi; x r<sup>2</sup> x T</h4>
-                            <h4>V = <span id="voT"></span></h4>
-                        </div>
-                        <div class="col mx-3">
-                            <h2 class="text-center">Keliing</h2>
-                            <h4>K = 4 x &pi; x r</h4>
-                            <h4>K = <span id="keT"></span></h4>
-                        </div>
-                        <div class="col mx-3">
-                            <h2 class="text-center">Luas Permukaan</h2>
-                            <h4>LP = 4 x &pi; x r + (K x T)</h4>
-                            <h4>LP = <span id="lupeT"></span></h4>
-                        </div>
+            </div>
+            <div class="col" id="rt" style="display: none;">
+                <div class="card h-100 d-flex flex-column shadow-sm bg-success" data-bs-theme="dark">
+                    <div class="card-header">
+                        <h2 class="text-center">Volume</h2>
+                    </div>
+                    <div class="container card-body">
+                        <h4>V = &pi; x r<sup>2</sup> x T</h4>
+                        <h4>V = <span id="voT"></span></h4>
                     </div>
                 </div>
             </div>
-            <button type="button" class="btn-close position-absolute top-0 end-0 m-2" aria-label="Close" id="cc"></button>
+            <div class="col" id="rt1" style="display: none;">
+                <div class="card h-100 d-flex flex-column shadow-sm bg-success" data-bs-theme="dark">
+                    <div class="card-header">
+                        <h2 class="text-center">Keliling</h2>
+                    </div>
+                    <div class="container card-body">
+                        <h4>K = 4 x &pi; x r</h4>
+                        <h4>K = <span id="keT"></span></h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col" id="rt2" style="display: none;">
+                <div class="card h-100 d-flex flex-column shadow-sm bg-success" data-bs-theme="dark">
+                    <div class="card-header">
+                        <h2 class="text-center">Luas Permukaan</h2>
+                    </div>
+                    <div class="container card-body">
+                        <h4>LP = 4 x &pi; x r + (K x T)</h4>
+                        <h4>LP = <span id="lupeT"></span></h4>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="card container my-5" id="sli" style="display: none;">
-        <div class="card-body col-12">
-            <div class="row">
-                <div class="col-3">
+
+    <div class="container my-5" id="sli" style="display: none;">
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            <div class="card col border-warning">
+                <div class="card-body">
                     <img src="lm.png" class="img-fluid">
                     <div class="text-center">
                         <h1>Limas</h1>
-                        <h4>V = 1/3 x s x s x T</h4>
-                        <h4>K = (4 x s) + (s miring x 4)</h4>
-                        <h4>LP = (s x s) + (4 x LP miring)</h4>
-                        <p>Kubus merupakan sebuah bangun ruang yang memiliki 6 sisi.</p>
+                        <p>Limas merupakan bentuk dari tenda, seperti kerucut namun dengan alas berbentuk segi 4.</p>
                         <div class="input-grup my-2">
                             <input class="form-control text-center" type="number" placeholder="Masukkan nilai sisi" id="IL">
                             <input class="form-control text-center my-2" type="number" placeholder="Masukkan nilai tinggi" id="TL">
-                            <button class="btn btn-warning mt-3 form-control" id="SK" onclick="math()">submit</button>
+                            <button class="btn btn-warning mt-3 form-control" id="SBL" onclick="math()">submit</button>
                         </div>
                     </div>
+                    <button type="button" class="btn-close position-absolute top-0 start-0 m-2" aria-label="Close" id="ll"></button>
                 </div>
-                <div class="col-9">
-                    <div class="row">
-                        <div class="col mx-3">
-                            <h2 class="text-center">Volume</h2>
-                            <h5>V = 1/3 x s x s x T</h5>
-                            <h5>V = <span id="voL"></span></h5>
-                        </div>
-                        <div class="col mx-3">
-                            <h2 class="text-center">Keliing</h2>
-                            <h5>K = (4 x s) + (s miring x 4)</h5>
-                            <h5>K = <span id="keL"></span></h5>
-                        </div>
-                        <div class="col mx-3">
-                            <h2 class="text-center">Luas Permukaan</h2>
-                            <h5>LP = (s x s) + (4 x LP miring)</h5>
-                            <h5>LP = <span id="lupeL"></span></h5>
-                        </div>
+            </div>
+            <div class="col" id="rl" style="display: none;">
+                <div class="card h-100 d-flex flex-column shadow-sm bg-warning" data-bs-theme="dark">
+                    <div class="card-header">
+                        <h2 class="text-center">Volume</h2>
+                    </div>
+                    <div class="container card-body">
+                        <h5>V = 1/3 x s x s x T</h5>
+                        <h5>V = <span id="voL"></span></h5>
                     </div>
                 </div>
             </div>
-            <button type="button" class="btn-close position-absolute top-0 end-0 m-2" aria-label="Close" id="ll"></button>
+            <div class="col" id="rl1" style="display: none;">
+                <div class="card h-100 d-flex flex-column shadow-sm bg-warning" data-bs-theme="dark">
+                    <div class="card-header">
+                        <h2 class="text-center">Keliling</h2>
+                    </div>
+                    <div class="container card-body">
+                        <h5>K = (4 x s) + (s miring x 4)</h5>
+                        <h5>K = <span id="keL"></span></h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col" id="rl2" style="display: none;">
+                <div class="card h-100 d-flex flex-column shadow-sm bg-warning" data-bs-theme="dark">
+                    <div class="card-header">
+                        <h2 class="text-center">Luas Permukaan</h2>
+                    </div>
+                    <div class="container card-body">
+                        <h5>LP = (s x s) + (4 x LP miring)</h5>
+                        <h5>LP = <span id="lupeL"></span></h5>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
@@ -228,71 +273,170 @@
             );
         });
         
+
+//Kubus
         $( "#sho" ).on( "click", 
         function() {
             $( "#sba" ).show( "slow",
             function() {
-                $( "#main").hide("slow");
+                $( "#main").hide("slow",
+                    function() {
+                        $("#hd").hide("slow");
+                    });
             });
         });
-
         $( "#cl" ).on( "click", function() {
-        $( "#sba" ).hide( 1000,
+        $( "#sba" ).hide( "slow",
             function() {
-                $( "#main").show("slow");
-            } 
-        );
+                $( "#rk").hide("slow",
+                function() {
+                $( "#rk1").hide("slow",
+                function() {
+                $( "#rk2").hide("slow",
+                function() {
+                    $( "#main").show("slow",
+                        function() {
+                        $("#hd").show("slow");
+                    });
+                });
+                });
+                });
+            });
+        });
+        $( "#SBK" ).on( "click", 
+        function() {
+            $( "#rk" ).show( "slow", 
+                function() {
+            $( "#rk1" ).show( "slow",
+                function() {
+            $( "#rk2" ).show( "slow" );
+        });
+        });
         });
         
+//Bola
         $( "#sha" ).on( "click", 
         function() {
             $( "#sbo" ).show( "slow",
             function() {
-                $( "#main").hide("slow");
-            }
-            
-            );
+                $( "#main").hide("slow",
+                    function() {
+                        $("#hd").hide("slow");
+                    }
+                );
+            });
         });
         $( "#lc" ).on( "click", function() {
-        $( "#sbo" ).hide( 1000,
+        $( "#sbo" ).hide( "slow",
             function() {
-                $( "#main").show("slow");
-            } 
-        );
+                $( "#rb").hide("slow",
+                function() {
+                $( "#rb1").hide("slow",
+                function() {
+                $( "#rb2").hide("slow",
+                function() {
+                    $( "#main").show("slow",
+                        function(){
+                        $("#hd").show("slow");
+                        }
+                    );
+                });
+                });
+            });
+            });
         });
-
+        $( "#SBB" ).on( "click", 
+        function() {
+            $( "#rb" ).show( "slow",
+                function() {
+            $( "#rb1" ).show( "slow",
+                function() {
+            $( "#rb2" ).show( "slow" );
+        });
+        });
+        });
+//Tabung
         $( "#shi" ).on( "click", 
         function() {
             $( "#sta" ).show( "slow",
             function() {
-                $( "#main").hide("slow");
-            }
-            
-            );
+                $( "#main").hide("slow",
+                    function() {
+                        $("#hd").hide("slow");
+                    }
+                );
+            });
         });
         $( "#cc" ).on( "click", function() {
-        $( "#sta" ).hide( 1000,
+        $( "#sta" ).hide( "slow",
             function() {
-                $( "#main").show("slow");
-            } 
-        );
+                $( "#rt").hide("slow",
+                function() {
+                $( "#rt1").hide("slow",
+                function() {
+                $( "#rt2").hide("slow",
+                function() {
+                    $( "#main").show("slow",
+                        function(){
+                        $("#hd").show("slow");
+                        }
+                    );
+                });
+                });
+            });
+            });
+        });
+        $( "#SBT" ).on( "click", 
+        function() {
+            $( "#rt" ).show( "slow",
+                function() {
+            $( "#rt1" ).show( "slow",
+                function() {
+            $( "#rt2" ).show( "slow" );
+        });
+        });
         });
 
+//Limas
         $( "#shu" ).on( "click", 
-        function() {
+        function() {    
             $( "#sli" ).show( "slow",
             function() {
-                $( "#main").hide("slow");
-            }
-            
-            );
+                $( "#main").hide("slow",
+                    function() {
+                        $("#hd").hide("slow");
+                    }
+                );
+            });
         });
         $( "#ll" ).on( "click", function() {
-        $( "#sli" ).hide( 1000,
+        $( "#sli" ).hide( "slow",
             function() {
-                $( "#main").show("slow");
-            } 
-        );
+                $( "#rl").hide("slow",
+                function() {
+                $( "#rl1").hide("slow",
+                function() {
+                $( "#rl2").hide("slow",
+                function() {
+                    $( "#main").show("slow",
+                        function(){
+                        $("#hd").show("slow");
+                        }
+                    );
+                });
+                });
+            });
+            });
+        });
+        $( "#SBL" ).on( "click", 
+        function() {   
+            $( "#rl" ).show( "slow",
+                function() {   
+            $( "#rl1" ).show( "slow",
+                function() {   
+            $( "#rl2" ).show( "slow" );
+        });
+        });
         });
         
         function math() {
@@ -324,10 +468,21 @@
 
             var sisiL = document.getElementById('IL').value
             var tinggiL = document.getElementById('TL').value
-            var lm = (Math.sqrt(Math.pow((1 / 2 * sisiL), 2))) + (Math.pow(tinggiL, 2) * sisiL * 1 / 2);
+            var ql = sisiL/2
+            var sqsl = Math.pow(ql, 2) + Math.pow(tinggiL, 2);
+            var sl = Math.sqrt(sqsl);
+            var lm = sisiL * sqsl / 2;
+            var sm = Math.pow(sisiL, 2) + Math.pow(sisiL, 2);
+            var sqsm = Math.sqrt(sm) /  2;
+            var sqmm = Math.pow(sqsm, 2) + Math.pow(tinggiL, 2);
+            var sqm = Math.sqrt(sqmm);
             var VL = (1 / 3) * sisiL * sisiL * tinggiL;
-            var KL = ((Math.sqrt(Math.pow(Math.sqrt(Math.pow(sisiL, 2) + Math.pow(sisiL, 2)) / 2, 2))) + (Math.pow(tinggiL, 2)) * 4 + 4 * s);
+            var KL = (4 * sisiL) + (4 * sqm);
             var LPL = (sisiL * sisiL) + (4 * lm);
+            // var lm = (Math.sqrt(Math.pow((1 / 2 * sisiL), 2))) + (Math.pow(tinggiL, 2) * sisiL * 1 / 2);
+            // var VL = (1 / 3) * sisiL * sisiL * tinggiL;
+            // var KL = ((Math.sqrt(Math.pow(Math.sqrt(Math.pow(sisiL, 2) + Math.pow(sisiL, 2)) / 2, 2))) + (Math.pow(tinggiL, 2)) * 4 + 4 * s);
+            // var LPL = (sisiL * sisiL) + (4 * lm);
             document.getElementById("voL").innerHTML = VL + " cm<sup>3</sup>";
             document.getElementById("keL").innerHTML = KL + " cm";
             document.getElementById("lupeL").innerHTML = LPL + " cm<sup>2</sup>";
